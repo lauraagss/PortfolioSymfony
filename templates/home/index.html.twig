@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}{{ controller_name }}{% endblock %}
+
+{% block body %}
+    {% include 'require/nav.html.twig' %}
+    {% include 'component/presentation.html.twig' %}
+    {% include 'component/réalisation.html.twig' with {'projets' : projets}%}
+    {% include 'component/competence.html.twig' %}
+    {% include 'component/contact.html.twig' with {'form' : form} %}
+    {% include 'require/footer.html.twig' %}
+{% endblock %}

@@ -1,0 +1,61 @@
+<!--Contact-->
+<section class="page-section pt-3 pb-3" id="contact">
+    <div class="container">
+        <h2 class=" text-secondary text-center mb-4">Contactez-moi</h2>
+        {{ form_start(form,{'attr': {
+            'class': 'text-center border border-light shadow p-5',
+        }} ) }}
+
+        <div class="form-row mb-4">
+            <div class="col">
+                {{ form_widget(form.name,{
+                    'attr': {
+                        'class': 'form-control',
+                        'placeholder': 'Nom'
+                    }
+                }) }}
+            </div>
+            <span class="erreur">
+        {{ form_errors(form.name) }}
+                            </span>
+            <div class="col">
+                {{ form_widget(form.lastname,{
+                    'attr': {
+                        'class': 'form-control',
+                        'placeholder': 'Prénom'
+                    }
+                }) }}
+            </div>
+            <span class="erreur">
+{{ form_errors(form.lastname) }}
+                            </span>
+        </div>
+        <div class="col">
+            {{ form_widget(form.email,{
+                'attr': {
+                    'class': 'form-control',
+                    'placeholder': 'Email'
+                }
+            }) }}
+        </div>
+        <span class="erreur">
+{{ form_errors(form.email) }}
+
+                            </span>
+        <div class="col">
+            {{ form_widget(form.message,{
+                'attr': {
+                    'class': 'form-control',
+                    'placeholder': 'Message'
+                }
+            }) }}
+        </div>
+        <span class="erreur">
+{{ form_errors(form.message) }}
+
+                            </span>
+        <button class="btn btn-dark my-4 btn-block" type="submit">Envoyer</button>
+        {{ form_end(form) }}
+    </div>
+</section>
+<div class="pd-parallax" datasrc="{{ asset('statics/images/projet1.jpg') }}"></div>

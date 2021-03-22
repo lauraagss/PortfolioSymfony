@@ -1,0 +1,31 @@
+<!--Portfolio-->
+<section class="page-section pt-3 pb-3 portfolio" id="portfolio">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="page-section-heading text-secondary text-center">Projets</h2>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                {% for projet in projets %}
+                <div class="swiper-slide">
+                    <div  class="card" style="18em;">
+                        <img class="card-img-top" src="{{ asset('statics/images/projets/' ~ projet.image)  }}">
+                        <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text"></p>
+                            <a href="{{
+                            path('single_projet',
+                                {'id': projet.id})
+                            }}" target="_blank" class="btn btn-dark">Voir le Projet</a>
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
+            </div>
+            <div class="swiper-button-prev" style="color: #212529"></div>
+            <div class="swiper-button-next" style="color: #212529"></div>
+        </div>
+    </div>
+</section>
+
+<div class="pd-parallax" datasrc="{{ asset('statics/images/projet3.jpg') }}"></div>

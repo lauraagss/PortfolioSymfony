@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<body>
+<div class="container-fluid">
+    <h1 class="display-4">{{ projet.title }}</h1>
+    <p class="lead"></p>
+    <hr class="my-4">
+    <p> Bilan : {{ projet.description}}</p>
+    <p> Stack Technique: {{ projet.technology}} </p>
+    <p> Période de réalisation: {{ projet.createAt | date()}}</p>
+    <a href="{{ asset('statics/documentations/' ~  projet.documentation ) }}"  download> <button type="button" class=" rounded mx-auto d-block btn btn-light shadow" >Télécharger la documentation</button> </a>
+</div>
+<div class="pd-parallax" datasrc="{{ asset('statics/images/projet3.jpg') }}"></div><section>
+    <img class="card-img-top" src="{{ asset('statics/images/projets/' ~ projet.image)  }}">
+</section>
+<section class="bg-dark shadow pt-3 pb-3">
+    <footer class="text-center">
+        <a class="btn btn-light btn-lg" href="index.php" role="button">retour à l'accueil</a>
+        <h5 class=" text-light">© Design by Laura Goncalves </h5>
+        <a href="tel:06.20.78.79.72" class="mx-2" role="button"><i class="fa fa-phone text-light "></i></a>
+        <a href="mailto:laura.goncalves@lyceestvincent.fr" class="mx-2" role="button"><i class="fa fa-envelope text-light"></i></a>
+        <a href="https://www.linkedin.com/feed/" class="mx-2" role="button"><i class="fab fa-linkedin-in text-light "></i></a>
+        <a href="https://github.com/lauraagss" class="mx-2" role="button"><i class="fab fa-github text-light"></i></a>
+
+    </footer>
+</section>
+{% endblock %}
