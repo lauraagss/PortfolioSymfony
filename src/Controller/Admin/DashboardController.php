@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Contact;
 use App\Entity\Project;
+use App\Entity\Timeline;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -33,5 +34,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Contact', 'fas fa-address-book', Contact::class);
         yield MenuItem::linkToCrud('Projet', 'fas fa-laptop-code', Project::class);
+        yield MenuItem::linkToCrud('Timeline', 'fas fa-business-time', Timeline::class);
+
     }
 }

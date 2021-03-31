@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Contact;
 use App\Entity\Project;
+use App\Entity\Timeline;
 use App\Form\ContactType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -22,6 +23,10 @@ class HomeController extends AbstractController
             ->getDoctrine()
             ->getRepository(Project::class)
             ->findAll();
+        $timelines = $this
+            ->getDoctrine()
+            ->getRepository(Timeline::class)
+            ->findAll();
 
         $contact = new Contact();
         $contactForm = $this->createForm(ContactType::class, $contact);
@@ -35,6 +40,7 @@ class HomeController extends AbstractController
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'projets' => $projets,
+            'timelines'=> $timelines,
             'form' => $contactForm->createView(),
         ]);
     }

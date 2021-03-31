@@ -135,3 +135,19 @@ nav{
 .card{
     width: 18em!important;
 }
+
+.blocImagePhoto{
+    display: flex;
+    justify-content: center;
+
+}
+.blocImagePhoto > img{
+    width: 400px;
+    height: 400px;
+    margin: 0 0 50px 150px;
+}
+.blocImagePhoto > div > p{
+    margin: 0 150px 20px 0;
+    font-size: 30px;
+
+}

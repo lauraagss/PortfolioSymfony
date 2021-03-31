@@ -70,6 +70,10 @@ class Project
      * @Vich\UploadableField(mapping="documentation_projets", fileNameProperty="documentation")
      */
     private ?File $docFile = null;
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $bilan;
 
     public function getId(): ?int
     {
@@ -213,5 +217,21 @@ class Project
         if ($docFile){
             $this->update_at = new \DateTime();
         }
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBilan()
+    {
+        return $this->bilan;
+    }
+
+    /**
+     * @param mixed $bilan
+     */
+    public function setBilan($bilan): void
+    {
+        $this->bilan = $bilan;
     }
 }

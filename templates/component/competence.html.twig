@@ -5,31 +5,13 @@
             <div class="col-md-6 offset-md-3">
                 <h2 class="page-section-heading text-secondary text-center">Compétences</h2>
                 <ul class="timeline">
+                    {% for timeline in timelines %}
                     <li>
-                        <a class=" text-dark shadow" >POO PHP</a>
-                        <a  class="float-right text-dark shadow">Septembre-2020 Aujourd'hui</a>
-                        <p>Apprentissage des bases de la Programation Orienté Objet en PHP dans le but de maitriser Symfony.</p>
+                        <a class=" text-dark shadow" >{{ timeline.nameTechnology}}</a>
+                        <a  class="float-right text-dark shadow">{{ timeline.createdAt | date('d/m/y')}}----{{ timeline.finishAt | date('d/m/y')}}</a>
+                        <p>{{ timeline.description}}</p>
                     </li>
-                    <li >
-                        <a class="text-dark shadow" >POO C#</a>
-                        <a  class="float-right text-dark shadow">Janvier-2019 Juin-2019</a>
-                        <p>Apprentissage des bases de la Programation Orienté Objet en C# dans le but de pouvoir crée une application. </p>
-                    </li>
-                    <li>
-                        <a class=" text-dark shadow" >PHP</a>
-                        <a  class="float-right text-dark shadow">Novembre-2019 Mars-2019</a>
-                        <p>Apprentissage des bases du langages PHP afin de rendre un site plus actif. Mis en pratique sur mon portfeuille de compétence, livequestion et d'autres projets.</p>
-                    </li>
-                    <li>
-                        <a class=" text-dark shadow" >Wordpress</a>
-                        <a  class="float-right text-dark shadow">Octobre-2019 Novembre-2019</a>
-                        <p>Familiarisation avec un CMS. Mis en pratique création d'une épicerie en ligne.</p>
-                    </li>
-                    <li>
-                        <a class="text-dark shadow">HTML5/CSS3</a>
-                        <a  class="float-right text-dark shadow">Septembre-2019 Novembre-2019</a>
-                        <p>Apprentissage des bases des langages de l'intégration.</p>
-                    </li>
+                    {%endfor%}
                 </ul>
             </div>
         </div>

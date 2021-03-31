@@ -3,17 +3,15 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-    <div class="d-flex text-center align-items-center form-login pimg1">
+    <div class="pd-parallax" datasrc="{{ asset('statics/images/projet2.jpg') }}"></div>
+    <div class="text-center border border-light shadow p-5">
         <form action="{{ path('login') }}" method="post" class="form-signin">
             <h1 class="h3 mb-3 font-weight-normal">Veuillez-vous connecter</h1>
 
-            <label for="username" class="sr-only">Email address</label>
-            <input type="text" id="username" name="_username" class="form-control" placeholder="Nom" required autofocus value="{{ last_username }}">
-
-            <label for="password" class="sr-only">Password</label>
-            <input type="password" id="password" name="_password" class="form-control" placeholder="Password" required>
+            <input type="text" id="username" name="_username" class="form-control" placeholder="Prénom" required autofocus value="{{ last_username }}">
+            <input style="margin-top: 10px;" type="password" id="password" name="_password" class="form-control" placeholder="Mot de passe" required>
             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Se connecter</button>
+            <button style="margin-top: 10px;" class="btn btn-lg btn-dark btn-block" type="submit">Se connecter</button>
             {% if error %}
                 <div class="alert alert-danger mt-4">
                     {{ error.messageKey | trans(error.messagedata, 'security')}}
@@ -21,4 +19,16 @@
             {% endif %}
         </form>
     </div>
+    <div class="pd-parallax" datasrc="{{ asset('statics/images/projet2.jpg') }}"></div>
+    <section class="bg-dark shadow pt-3 pb-3">
+        <footer class="text-center">
+            <a class="btn btn-light btn-lg" href="index.php" role="button">retour à l'accueil</a>
+            <h5 class=" text-light">© Design by Laura Goncalves </h5>
+            <a href="tel:06.20.78.79.72" class="mx-2" role="button"><i class="fa fa-phone text-light "></i></a>
+            <a href="mailto:laura.goncalves@lyceestvincent.fr" class="mx-2" role="button"><i class="fa fa-envelope text-light"></i></a>
+            <a href="https://www.linkedin.com/feed/" class="mx-2" role="button"><i class="fab fa-linkedin-in text-light "></i></a>
+            <a href="https://github.com/lauraagss" class="mx-2" role="button"><i class="fab fa-github text-light"></i></a>
+
+        </footer>
+    </section>
 {% endblock %}
